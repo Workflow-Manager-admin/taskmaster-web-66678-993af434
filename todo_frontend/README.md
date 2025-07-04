@@ -11,9 +11,27 @@ This project provides a minimal React template with a clean, modern UI and minim
 
 ## Getting Started
 
+### 1. Configure Supabase Connection
+
+Before running the React app, you MUST configure the Supabase environment variables.
+Copy `.env.example` to `.env` in the root of `todo_frontend`, and fill in with your Supabase project details:
+
+```
+cp .env.example .env
+```
+
+Then, edit `.env` and set:
+
+- **REACT_APP_SUPABASE_URL** — your Supabase Project URL (from https://app.supabase.com)
+- **REACT_APP_SUPABASE_KEY** — your public "anon" API key (never use service_role/admin keys for frontend)
+
+The app **will not work** if these are missing — you'll see an error about "Supabase URL is missing".
+
+### 2. Start the Application
+
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
