@@ -13,19 +13,22 @@ This project provides a minimal React template with a clean, modern UI and minim
 
 ### 1. Configure Supabase Connection
 
-Before running the React app, you MUST configure the Supabase environment variables.
-Copy `.env.example` to `.env` in the root of `todo_frontend`, and fill in with your Supabase project details:
+Before running the React app, you MUST configure the Supabase project credentials.
+Create or edit `manifest.json` in the root of `todo_frontend` with your Supabase credentials:
 
+```json
+{
+  "supabaseUrl": "<your-supabase-project-url>",
+  "supabaseKey": "<your-anon-public-api-key>"
+}
 ```
-cp .env.example .env
-```
 
-Then, edit `.env` and set:
+- **supabaseUrl** — your Supabase Project URL (from https://app.supabase.com)
+- **supabaseKey** — your public "anon" API key (never use service_role/admin keys for frontend)
 
-- **REACT_APP_SUPABASE_URL** — your Supabase Project URL (from https://app.supabase.com)
-- **REACT_APP_SUPABASE_KEY** — your public "anon" API key (never use service_role/admin keys for frontend)
+**Do NOT use .env or environment variables; all configuration is now loaded via manifest.json for improved portability.**
 
-The app **will not work** if these are missing — you'll see an error about "Supabase URL is missing".
+The app **will not work** if `manifest.json` is missing or malformed.
 
 ### 2. Start the Application
 
